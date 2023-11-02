@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n, a[100];
+    int sum = 0;
+    cin>>n;
+    for(int i=0; i<n; i++) cin>>a[i];
+    for(int i=0; i<n; i++){
+    	bool k = true;
+    	for(int t=0; t<n; t++){
+    		if(t == i) continue;
+    		for(int l=t+1; l<n; l++){
+    			if(l == i) continue;
+    			if(a[i] == a[t] + a[l] && k){
+    				sum++;
+    				k = false;
+    				break;
+				}
+			}
+			if(!k) break;
+		}
+	}
+	cout<<sum;
+    return 0;
+}
